@@ -1,0 +1,25 @@
+<div class="container">
+  <div *ngFor="let pelicula of peliculas" class="card">
+    <div class="cardTitle">
+      <h4>
+        <i> {{ pelicula.title }} </i>
+      </h4>
+    </div>
+
+    <div class="cardBody">
+      <div class="director">
+        <p>Director</p>
+        <p>
+          <b> {{ pelicula.director }} </b>
+        </p>
+      </div>
+      <div class="director">
+        <p>Episodio #</p>
+        <p>
+          <b> {{ pelicula.episode_id }} </b>
+        </p>
+      </div>
+      <button class="btnVer">Ver personajes</button>
+    </div>
+  </div>
+</div>

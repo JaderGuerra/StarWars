@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 939px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  border: 1px solid #000000;
+  width: 240px;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+.cardTitle > h4 {
+  margin: 5px;
+  text-align: center;
+}
+
+.director {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnVer {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  background-color: navy;
+  padding: 10px;
+  cursor: pointer;
+}
