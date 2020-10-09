@@ -1,0 +1,14 @@
+.personajes{
+border: 1px solid #000000;
+}
+
+.personajes__title{
+   text-align: center;
+
+}
+.small{
+
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: rgb(26, 107, 134);
+   text-transform: capitalize;
+}
