@@ -13,9 +13,12 @@ export class CharactersComponent implements OnInit {
   constructor(private service: ApiService, private ar: ActivatedRoute) {
 
 
+
+
     const id = this.ar.snapshot.paramMap.get('id')
-    this.service.characters(id).subscribe((c) => {
-      console.log(c);
+    this.service.characters(id).subscribe((c: any[]) => {
+      console.log(c)
+      this.characters = c;
 
     })
     /* this.ar.paramMap.subscribe((params) => {
