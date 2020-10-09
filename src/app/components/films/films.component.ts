@@ -20,7 +20,7 @@ export class FilmsComponent implements OnInit {
   }
 
   verPersonajes(id: string) {
-    console.log(id);
+
     this.router.navigate(['/films', id])
   }
 }

@@ -5,8 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   getData() {
     return this.http.get('https://swapi.dev/api/films/');
+  }
+
+  characters(id: string) {
+    return this.http.get(`https://swapi.dev/api/people/1`)
+    //return this.http.get(`https://swapi.dev/api/films/${id}`);
   }
 }
