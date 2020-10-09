@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-films',
@@ -9,7 +10,7 @@ import { ApiService } from '../../services/api.service';
 export class FilmsComponent implements OnInit {
   peliculas: any[];
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.api.getData().subscribe((data: any) => {
@@ -17,7 +18,9 @@ export class FilmsComponent implements OnInit {
 
     });
   }
-  ver(e) {
-    console.log(e.characters);
+
+  verPersonajes(id: string) {
+    console.log(id);
+    this.router.navigate(['/films', id])
   }
 }
