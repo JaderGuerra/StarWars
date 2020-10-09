@@ -9,12 +9,15 @@ import { ApiService } from '../../services/api.service';
 export class FilmsComponent implements OnInit {
   peliculas: any[];
 
-  constructor(public api: ApiService) {}
+  constructor(public api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getData().subscribe((data: any) => {
       this.peliculas = data.results;
-      console.log(this.peliculas);
+
     });
+  }
+  ver(e) {
+    console.log(e.characters);
   }
 }

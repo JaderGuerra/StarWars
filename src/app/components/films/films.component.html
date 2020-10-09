@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngFor="let pelicula of peliculas" class="card">
+  <div *ngFor="let pelicula of peliculas; let i = index" class="card">
     <div class="cardTitle">
       <h4>
         <i> {{ pelicula.title }} </i>
@@ -19,7 +19,7 @@
           <b> {{ pelicula.episode_id }} </b>
         </p>
       </div>
-      <button class="btnVer">Ver personajes</button>
+      <button (click)="ver(pelicula)" class="btnVer">Ver personajes</button>
     </div>
   </div>
 </div>
