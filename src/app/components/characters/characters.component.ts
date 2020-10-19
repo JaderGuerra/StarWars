@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from "@angular/router";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-characters',
@@ -14,14 +15,14 @@ export class CharactersComponent implements OnInit {
   constructor(private service: ApiService, private ar: ActivatedRoute) {
 
     const id = this.ar.snapshot.paramMap.get('id')
+    console.log(id);
     this.service.characters(id).subscribe((resp: any) => {
       let promesas = resp.characters
-      //this.characters = promesas
+
 
       promesas.map((url) => {
         this.service.http.get(url).subscribe((resp: any) => {
-          this.characters = resp
-          console.log(resp);
+          this.characters.push(resp)
         })
       })
     })
@@ -44,9 +45,18 @@ export class CharactersComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-  }
+  /* private array(personajes: object) {
+    if (personajes === null) {
+      return [];
+    }
+    Object.keys(personajes).forEach((key) => {
+      const character = personajes[key]
 
+      this.characters.push(character)
+    })
+    return this.characters
 
+  } */
 }
