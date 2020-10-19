@@ -12,9 +12,6 @@ export class ApiService {
   }
 
   characters(id: string) {
-
-    // return this.http.get(`https://swapi.dev/api/people/${id}`)
-
     return this.http.get(`https://swapi.dev/api/films/${id}`);
   }
 }
