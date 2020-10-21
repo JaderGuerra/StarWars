@@ -2,7 +2,8 @@
    <h2 class="personajes__title">Personajes</h2>
    <hr>
    <div class="container__card">
-      <div class="personajes__card" *ngFor="let personaje of characters">
+      <div class="personajes__card"
+         *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
          <h3 class="s">Nombre : <small class="small">{{personaje.name}}</small></h3>
          <h3>Color de Ojos : <small class="small">{{personaje.eye_color}}</small></h3>
          <h3>Genero : <small class="small">{{personaje.gender}}</small></h3>
@@ -14,4 +15,5 @@
       </li> -->
       </div>
    </div>
+   <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="characters.length"></ngb-pagination>
 </div>

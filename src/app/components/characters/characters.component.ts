@@ -10,6 +10,8 @@ import { map } from "rxjs/operators";
 })
 export class CharactersComponent implements OnInit {
   characters: any[] = [];
+  page = 1
+  pageSize = 10
 
   constructor(private service: ApiService, private ar: ActivatedRoute) {
 
