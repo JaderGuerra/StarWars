@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from "@angular/router";
-import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-characters',
@@ -10,6 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class CharactersComponent implements OnInit {
   characters: any[] = [];
+  peliculas: any[] = []
   page = 1
   pageSize = 10
 
@@ -22,12 +22,27 @@ export class CharactersComponent implements OnInit {
 
       promesas.map((url: string) => {
 
-        this.service.http.get(url).subscribe((resp: any) => {
+        this.service.http.get(url).subscribe((character: any) => {
 
-          this.characters.push(resp)
+          this.characters.push(character)
+
+          character.films.map((peliculas) => {
+
+            this.service.http.get(peliculas).subscribe((pelis) => {
+
+
+              console.log(pelis);
+
+            })
+
+          })
+
         })
       })
     })
+
+
+
 
 
 

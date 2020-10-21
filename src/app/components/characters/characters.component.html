@@ -8,12 +8,12 @@
          <h3>Color de Ojos : <small class="small">{{personaje.eye_color}}</small></h3>
          <h3>Genero : <small class="small">{{personaje.gender}}</small></h3>
          <span>Peliculas</span>
-         <!-- <li *ngFor="let peliculas of characters.films">
-         <a href="">
-            {{peliculas}}
-         </a>
-      </li> -->
+         <li *ngFor="let pelicula of peliculas">
+
+            {{pelicula.title}}
+         </li>
       </div>
    </div>
-   <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="characters.length"></ngb-pagination>
+   <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
+      [collectionSize]="characters.length"></ngb-pagination>
 </div>

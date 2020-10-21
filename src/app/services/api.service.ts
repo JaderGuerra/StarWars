@@ -14,4 +14,6 @@ export class ApiService {
   characters(id: string) {
     return this.http.get(`https://swapi.dev/api/films/${id}`);
   }
+
+
 }
