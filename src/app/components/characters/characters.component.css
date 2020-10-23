@@ -18,12 +18,4 @@ border: 1px solid #000000;
    width: 80%;
    flex-wrap: wrap;
 }
-.personajes__card{
-   border: 1px solid #000000;
-   margin: 1em;
-   width: 250px;
-}
-.name{
-   color: rgb(143, 241, 241);
-   font-style: italic;
-}
+

@@ -21,11 +21,10 @@ export class CharactersComponent implements OnInit {
 
     this.service.characters(id).subscribe((resp: any) => {
       let promesas = resp.characters
-      promesas.forEach((urls: string) => {
+      promesas.map((urls: string) => {
 
         this.service.http.get(urls).subscribe((character: any) => {
           this.characters.push(character)
-          console.log(character);
         })
 
       })

@@ -5,15 +5,26 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 939px;
+  max-width: 1024px;
   display: flex;
  flex-wrap: wrap;
   justify-content: space-around; 
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
+}
+.header{
+  background-color: navy;
+  padding-left: 1em;
+}
+.title{
+  letter-spacing: 9px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-style: italic;
+  
 }
 .card {
   border: 1px solid #000000;
-  width: 240px;
+  width: 310px;
   height: auto;
   padding: 10px;
   margin-bottom: 1em;
@@ -39,4 +50,14 @@ body {
   background-color: navy;
   padding: 10px;
   cursor: pointer;
+}
+.name{
+  color: rgb(53, 56, 56);
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.link{
+  text-decoration: none;
+  margin-left: 1em;
 }

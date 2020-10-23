@@ -1,9 +1,8 @@
 <div class="container">
   <div *ngFor="let pelicula of peliculas; let i = index" class="card">
     <div class="cardTitle">
-      <h4>
-        <i> {{ pelicula.title }} </i>
-      </h4>
+      <h4 class="name">{{ pelicula.title }} </h4>
+      <hr>
     </div>
 
     <div class="cardBody">

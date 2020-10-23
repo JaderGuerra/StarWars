@@ -1,10 +1,11 @@
-<a routerLink='/films'>Volver</a>
+<a class="link" routerLink='/films'>Volver</a>
 
 <div class="container">
    <div class="card" *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <h2 class="name"> {{personaje.name}}</h2>
-      <h3>Color de Ojos : <small class="small">{{personaje.eye_color}}</small></h3>
-      <h3>Genero : <small class="small">{{personaje.gender}}</small></h3>
+      <hr>
+      <p>Eye color : <small class="small">{{personaje.eye_color}}</small></p>
+      <p>Gender : <small class="small">{{personaje.gender}}</small></p>
       <span>Peliculas</span>
       <!-- <li>
             {{peliculasName}}
