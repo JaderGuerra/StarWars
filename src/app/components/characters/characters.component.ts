@@ -10,13 +10,15 @@ import { ActivatedRoute } from "@angular/router";
 export class CharactersComponent implements OnInit {
   characters: any[] = [];
   peliculas: any[] = []
+
   page = 1;
   pageSize = 10;
+  load: boolean;
 
   peliculasName: any[] = []
 
   constructor(private service: ApiService, private ar: ActivatedRoute) {
-
+    this.load = true;
     const id = this.ar.snapshot.paramMap.get('id')
 
     this.service.characters(id).subscribe((resp: any) => {
@@ -25,6 +27,7 @@ export class CharactersComponent implements OnInit {
 
         this.service.http.get(urls).subscribe((character: any) => {
           this.characters.push(character)
+          this.load = false;
         })
 
       })

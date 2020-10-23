@@ -11,6 +11,16 @@ body {
   justify-content: space-around; 
   /* border: 1px solid #000000; */
 }
+.center{
+  margin-top: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-pulse{
+  color:  navy;
+}
 .header{
   background-color: navy;
   padding-left: 1em;
@@ -58,6 +68,9 @@ body {
   margin-bottom: 0;
 }
 .link{
-  text-decoration: none;
   margin-left: 1em;
+  color:navy
+}
+.link:hover{
+text-decoration: none;
 }

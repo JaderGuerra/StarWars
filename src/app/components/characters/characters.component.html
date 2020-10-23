@@ -1,20 +1,29 @@
-<a class="link" routerLink='/films'>Volver</a>
-
-<div class="container">
-   <div class="card" *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      <h2 class="name"> {{personaje.name}}</h2>
-      <hr>
-      <p>Eye color : <small class="small">{{personaje.eye_color}}</small></p>
-      <p>Gender : <small class="small">{{personaje.gender}}</small></p>
-      <span>Peliculas</span>
-      <!-- <li>
-            {{peliculasName}}
-         </li> -->
-      <!-- <div>
-            <app-films-names [names]="peliculasName"></app-films-names>
-         </div> -->
-   </div>
+<div class="center" *ngIf='load'>
+   <i class="fas fa-spinner fa-pulse fa-7x"></i>
 </div>
 
-<ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
-   [collectionSize]="characters.length"></ngb-pagination>
+<ng-container *ngIf='!load'>
+
+   <a class="link" routerLink='/films'><i class="fas fa-arrow-left"></i> Volver</a>
+
+   <div class="container">
+      <div class="card"
+         *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+         <h2 class="name"> {{personaje.name}}</h2>
+         <hr>
+         <p>Eye color : <small class="small">{{personaje.eye_color}}</small></p>
+         <p>Gender : <small class="small">{{personaje.gender}}</small></p>
+         <span>Peliculas</span>
+         <!-- <li>
+         {{peliculasName}}
+      </li> -->
+         <!-- <div>
+         <app-films-names [names]="peliculasName"></app-films-names>
+      </div> -->
+      </div>
+   </div>
+
+   <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
+      [collectionSize]="characters.length"></ngb-pagination>
+
+</ng-container>
