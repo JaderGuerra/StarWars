@@ -2,14 +2,29 @@
 body {
   font-family: "Ubuntu", sans-serif;
 }
+body.contenedor::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
 
 .container {
-  margin: 0 auto;
+  margin: 1em auto;
   max-width: 1024px;
   display: flex;
  flex-wrap: wrap;
   justify-content: space-around; 
   /* border: 1px solid #000000; */
+}
+.navSearch{
+  margin: 0 auto;
+  width: 90%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 969px;
+}
+.wrapper{
+  border: 1px solid #000000;
 }
 .center{
   margin-top: 5em;
@@ -23,10 +38,11 @@ body {
 }
 .header{
   background-color: navy;
-  padding-left: 1em;
+ 
 }
 .title{
   letter-spacing: 9px;
+  text-align: center;
   color: #ffffff;
   text-transform: uppercase;
   font-style: italic;
@@ -68,9 +84,16 @@ body {
   margin-bottom: 0;
 }
 .link{
-  margin-left: 1em;
+  letter-spacing: 1px;
   color:navy
 }
 .link:hover{
 text-decoration: none;
 }
+
+@media only screen and (min-width:650px){
+  .navSearch{
+    flex-direction: row;
+    align-items: center;
+  }
+} 
