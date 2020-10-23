@@ -6,15 +6,15 @@
 
    <nav class="navSearch">
       <a class="link" routerLink='/films'><i class="fas fa-arrow-left"></i> Back </a>
-      <!-- <form> -->
-      <input type="text" placeholder="search...">
-      <!-- </form> -->
+
+      <input #value type="text" placeholder="search..." (keyup)="buscar(value.value)">
+
 
    </nav>
 
    <div class="container">
       <div class="card"
-         *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+         *ngFor="let personaje of characters | filtroPersonajes:filtro_valor | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
          <h2 class="name"> {{personaje.name}}</h2>
          <hr>
          <p>Eye color : <small class="small">{{personaje.eye_color}}</small></p>

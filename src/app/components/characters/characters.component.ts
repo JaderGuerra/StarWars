@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from "@angular/router";
+import { strict } from 'assert';
 
 @Component({
   selector: 'app-characters',
@@ -10,12 +11,12 @@ import { ActivatedRoute } from "@angular/router";
 export class CharactersComponent implements OnInit {
   characters: any[] = [];
   peliculas: any[] = []
-
   page = 1;
   pageSize = 10;
   load: boolean;
 
-  peliculasName: any[] = []
+  mostrar: boolean = false;
+  filtro_valor = '';
 
   constructor(private service: ApiService, private ar: ActivatedRoute) {
     this.load = true;
@@ -32,7 +33,6 @@ export class CharactersComponent implements OnInit {
 
       })
     })
-
 
 
 
@@ -56,16 +56,10 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  /* private array(personajes: object) {
-    if (personajes === null) {
-      return [];
-    }
-    Object.keys(personajes).forEach((key) => {
-      const character = personajes[key]
+  buscar(value: string) {
 
-      this.characters.push(character)
-    })
-    return this.characters
+    this.filtro_valor = value;
+  }
 
-  } */
+
 }

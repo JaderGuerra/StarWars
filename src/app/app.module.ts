@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { FilmsComponent } from './components/films/films.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FiltroPersonajesPipe } from './pipes/filtro-personajes.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FilmsComponent, CharactersComponent,],
+  declarations: [AppComponent, FilmsComponent, CharactersComponent, FiltroPersonajesPipe,],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
