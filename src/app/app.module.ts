@@ -9,9 +9,9 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AppComponent, FilmsComponent, CharactersComponent],
+  declarations: [AppComponent, FilmsComponent, CharactersComponent,],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

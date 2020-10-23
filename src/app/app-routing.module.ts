@@ -6,7 +6,7 @@ import { FilmsComponent } from './components/films/films.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'films' },
   { path: 'films', component: FilmsComponent },
-  { path: 'films/:id', component: CharactersComponent },
+  { path: 'characters/:id', component: CharactersComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'films' },
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

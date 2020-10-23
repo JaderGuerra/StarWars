@@ -7,8 +7,9 @@ body {
   margin: 0 auto;
   max-width: 939px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+ flex-wrap: wrap;
+  justify-content: space-around; 
+  border: 1px solid #000000;
 }
 .card {
   border: 1px solid #000000;

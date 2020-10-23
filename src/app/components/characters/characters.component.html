@@ -1,19 +1,19 @@
-<div class="personajes">
-   <h2 class="personajes__title">Personajes</h2>
-   <hr>
-   <div class="container__card">
-      <div class="personajes__card"
-         *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-         <h3 class="s">Nombre : <small class="small">{{personaje.name}}</small></h3>
-         <h3>Color de Ojos : <small class="small">{{personaje.eye_color}}</small></h3>
-         <h3>Genero : <small class="small">{{personaje.gender}}</small></h3>
-         <span>Peliculas</span>
-         <li *ngFor="let pelicula of peliculas">
+<a routerLink='/films'>Volver</a>
 
-            {{pelicula.title}}
-         </li>
-      </div>
+<div class="container">
+   <div class="card" *ngFor="let personaje of characters | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+      <h2 class="name"> {{personaje.name}}</h2>
+      <h3>Color de Ojos : <small class="small">{{personaje.eye_color}}</small></h3>
+      <h3>Genero : <small class="small">{{personaje.gender}}</small></h3>
+      <span>Peliculas</span>
+      <!-- <li>
+            {{peliculasName}}
+         </li> -->
+      <!-- <div>
+            <app-films-names [names]="peliculasName"></app-films-names>
+         </div> -->
    </div>
-   <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
-      [collectionSize]="characters.length"></ngb-pagination>
 </div>
+
+<ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
+   [collectionSize]="characters.length"></ngb-pagination>
