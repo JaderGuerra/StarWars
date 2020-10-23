@@ -7,7 +7,7 @@ export class FiltroPersonajesPipe implements PipeTransform {
 
   transform(lista: any[], texto: string): any[] {
 
-    console.log(lista);
+
     if (!texto) {
       return lista
     }
