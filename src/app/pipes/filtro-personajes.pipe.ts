@@ -12,7 +12,9 @@ export class FiltroPersonajesPipe implements PipeTransform {
     return lista.filter((resp) => {
       const filterGender = resp.gender.toUpperCase().includes(texto.toUpperCase());
       const filterEyeColors = resp.eye_color.toUpperCase().includes(texto.toUpperCase());
+
       return (filterGender || filterEyeColors)
+
       /* return (resp.eye_color.toUpperCase().includes(texto.toUpperCase()) || resp.gender.toUpperCase().includes(texto.toUpperCase())) */
     })
 
