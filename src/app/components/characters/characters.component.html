@@ -22,13 +22,17 @@
          <span>Peliculas</span>
 
        
-         <!-- <li>
-         {{peliculasName}}
-      </li> -->
+        <!-- <li *ngFor="let s of personaje.films">
+        {{ s.title | json }}
+      </li>  -->
+      <li>
+        {{personaje.films | json}}
+      </li>  
          <!-- <div>
          <app-films-names [names]="peliculasName"></app-films-names>
       </div> -->
       </div>
+      
    </div>
 
    <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"

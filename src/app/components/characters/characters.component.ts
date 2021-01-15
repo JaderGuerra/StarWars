@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from "@angular/router";
-import { strict } from 'assert';
+
 
 @Component({
   selector: 'app-characters',
@@ -28,7 +28,7 @@ export class CharactersComponent implements OnInit {
 
       promesas.map((urls: string) => {
         this.service.http.get(urls).subscribe((character: any) => {
-          // console.log(character.films);
+         
           this.characters.push(character)
          
 
@@ -37,11 +37,13 @@ export class CharactersComponent implements OnInit {
       
       peliculas.map((urls: string) => {
         this.service.http.get(urls).subscribe((pelicula: any) => {
-          this.peliculas.push(pelicula)
+           this.peliculas.push(pelicula)
+    
+          
           this.load = false;
         })
       })
-          /*  */
+          
 
 
 
